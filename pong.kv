@@ -1,0 +1,24 @@
+# otp.kv
+
+<CustomFileChooserIconView>:
+    size_hint_y: None
+    height: "200dp"
+
+<OTPApp>:
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            id: image_display
+            allow_stretch: True
+        Label:
+            id: key_label
+            text: 'Binary Key:'
+        Button:
+            text: 'Encrypt Image'
+            on_press: app.encrypt_image(root)
+        Button:
+            text: 'Decrypt Image'
+            on_press: app.decrypt_image(root)
+        CustomFileChooserIconView:
+            id: file_chooser
+            path: '.'
